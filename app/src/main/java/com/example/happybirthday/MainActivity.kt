@@ -45,13 +45,13 @@ class MainActivity : AppCompatActivity() {
             ani3.duration = 1000
             ani3.fillAfter = false
             square1.startAnimation(ani3)
-
-            val ani2 = TranslateAnimation(0f,-200f,0f,-200f)
-            ani2.duration = 1000
-            ani2.fillAfter = false
-//            val hyperspaceJump: Animation = AnimationUtils.loadAnimation(this, R.anim.alpha_tozero)
-//            round1.startAnimation(hyperspaceJump)
-            round1.startAnimation(ani2)
+//
+//            val ani2 = TranslateAnimation(0f,-200f,0f,-200f)
+//            ani2.duration = 1000
+//            ani2.fillAfter = false
+            val hyperspaceJump: Animation = AnimationUtils.loadAnimation(this, R.anim.alpha_tozero)
+            round1.animation = hyperspaceJump
+//            round1.startAnimation(ani2)
 
             val ani4 = TranslateAnimation(0f,-100f,0f,-200f)
             ani4.duration = 1000
