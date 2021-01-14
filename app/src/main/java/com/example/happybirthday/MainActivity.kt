@@ -22,63 +22,42 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var round1:ImageView = findViewById(R.id.round1)
-        var round2:ImageView = findViewById(R.id.round2)
-        var square1:ImageView = findViewById(R.id.square1)
-        var square2:ImageView = findViewById(R.id.square2)
+        /* USED KOTLIN EXTENTION
+        val round1: ImageView = findViewById(R.id.round1)
+        val round2: ImageView = findViewById(R.id.round2)
+        val square1: ImageView = findViewById(R.id.square1)
+        val square2: ImageView = findViewById(R.id.square2)
+        */
+
         round1.setImageDrawable(getDrawable(R.drawable.present_round2))
         round2.setImageDrawable(getDrawable(R.drawable.present_round2))
         square2.setImageDrawable(getDrawable(R.drawable.present_square))
         square1.setImageDrawable(getDrawable(R.drawable.present_square))
 
-
+        val happyBirthday: Animation = AnimationUtils.loadAnimation(this, R.anim.happy_birthday)
+        val happyBirthday2: Animation = AnimationUtils.loadAnimation(this, R.anim.happy_birthday2)
+        val happyBirthday3: Animation = AnimationUtils.loadAnimation(this, R.anim.happy_birthday3)
+        val happyBirthday4: Animation = AnimationUtils.loadAnimation(this, R.anim.happy_birthday4)
 
         present.setOnClickListener {
 
+            round1.startAnimation(happyBirthday)
+            square2.startAnimation(happyBirthday2)
+            round2.startAnimation(happyBirthday3)
+            square1.startAnimation(happyBirthday4)
 
-            val ani = TranslateAnimation(0f,200f,0f,-200f)
-            ani.duration = 1000
-            ani.fillAfter = false
-            square2.startAnimation(ani)
+            /*
+                ###ANIMATE WITH CODE###
+                val ani = TranslateAnimation(0f,200f,0f,-200f)
+                ani.duration = 1000
+                ani.fillAfter = false
+                square2.startAnimation(ani)
 
-            val ani3 = TranslateAnimation(0f,100f,0f,-200f)
-            ani3.duration = 1000
-            ani3.fillAfter = false
-            square1.startAnimation(ani3)
-//
-//            val ani2 = TranslateAnimation(0f,-200f,0f,-200f)
-//            ani2.duration = 1000
-//            ani2.fillAfter = false
-            val hyperspaceJump: Animation = AnimationUtils.loadAnimation(this, R.anim.alpha_tozero)
-            round1.animation = hyperspaceJump
-//            round1.startAnimation(ani2)
-
-            val ani4 = TranslateAnimation(0f,-100f,0f,-200f)
-            ani4.duration = 1000
-            ani4.fillAfter = false
-            round2.startAnimation(ani4)
-
-//                   round1.animate().translationX(-300f).setDuration(2000).start()
-//                   round1.animate().translationY(-300f).setDuration(1500).start()
-//                   round1.animate().alpha(0f).setDuration(2000).start()
-
-//                   round2.setImageDrawable(getDrawable(R.drawable.present_round2))
-//                   round2.animate().translationX(300f).setDuration(2000).start()
-//                   round2.animate().translationY(-500f).setDuration(1500).start()
-//                   round2.animate().alpha(0f).setDuration(2400).start()
-//
-//                   square1.setImageDrawable(getDrawable(R.drawable.present_square))
-//                   square1.animate().translationX(-300f).setDuration(2000).start()
-//                   square1.animate().translationY(-430f).setDuration(1500).start()
-//                   square1.animate().alpha(0f).setDuration(2000).start()
-
-//                   square2.animate().translationX(300f).setDuration(2000).start()
-//                   square2.animate().translationY(-300f).setDuration(1500).rotation(100f).start()
-//                   square1.clearAnimation()
-//                   square2.animate().alpha(0f).setDuration(2200).start()
-
-
-
-            }
+                round2.setImageDrawable(getDrawable(R.drawable.present_round2))
+                round2.animate().translationX(300f).setDuration(2000).start()
+                round2.animate().translationY(-500f).setDuration(1500).start()
+                round2.animate().alpha(0f).setDuration(2400).start()
+            */
         }
     }
+}
